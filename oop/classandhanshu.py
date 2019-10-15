@@ -118,8 +118,34 @@ class SuperMan(Pesrson,Bird,Fish):
 s=SuperMan("zhangxing")
 s.fly()
 s.work()
-
 s.swim()
+#构造函数的调用顺序
+    #中想扩展b的构造函数,即调用b的构造函数后添加一些功能
+    #由俩种方法实现
+#此时先查找c的构造函数，
+#如果没有，则向上按照mro顺序查父类的构造函数,直达找到为止.
+class A():
+    def __init__(self):
+        print("A")
+class B():
+    def __init__(self,name):
+        print("B")
+        print(name)
+class C(B):
+    def __init__(self,name):
+        B.__init__(self,name)
+        print("这是c中的功能")
+#多态
+    #多态就是同一个对象在不同的情况下有不同的状态出现
+    #多态不是语法，是一种设计思想
+    #多态性:一种调用方式，不同的结果
+    #同一事物的多种形态,动物分为人类，狗类，猪类
+    #mixin设计模式
+
+
+
+
+
 
 
 
