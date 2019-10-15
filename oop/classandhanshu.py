@@ -60,8 +60,82 @@ print(t.name)
 print(Teacher.name)
 t.sleep()
 t.make_test()
+
 #子类和父类定义同一个变量,则优先使用子类本身
 #子类扩充父类功能
+#继承中的构造函数
+
+
+# __init__就是构造函数
+#每次实例化的时候，第一个被自动的调用
+#因为主要工作是进行初始化，所以得名
+class Animel():
+    pass
+class PaxingAni(Animel):
+    def __init__(self):
+        print("paxing Dongwu")
+class Dog(PaxingAni):
+    def __init__(self):
+        print("I am init in dog")
+kaka=Dog()
+class Cat(PaxingAni):
+    pass
+#猫没有写构造函数
+#此时应该自动调入构造函数，因为cat没有构造函数，所以查找父类构造函数
+class Cat(PaxingAni):
+    pass
+c=Cat()
+
+#单继承和多继承
+    #单继承：每个类类只能继承一个类
+    #多继承：每个类鱼鱼继承多个类
+#单继承和多继承的优缺点
+    #单继承:
+        #继承有序逻辑清晰语法简单隐患少呀
+        #功能不能无线扩展，只能在当前唯一的继承连中扩展
+    #多继承:
+        #类的功能扩展方便
+        #继承关系混乱
+class Fish():
+    def __init__(self,name):
+        self.name=name
+    def swim(self):
+        print("i am swiming")
+class Bird():
+    def __init__(self,name):
+        self.name=name
+    def fly(self):
+        print("I am fltign")
+class Person():
+    def __init__(self,name):
+        self.name=name
+    def workd(self):
+        print("working..../")
+        #继承（多继承）
+class SuperMan(Pesrson,Bird,Fish):
+    def __init__(self, name):
+        self.name = name
+s=SuperMan("zhangxing")
+s.fly()
+s.work()
+
+s.swim()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
