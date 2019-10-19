@@ -39,7 +39,27 @@ urllib.error
     -没有cookie 登录,案例9,没有使用cookie则反馈为没有登录状态
  -使用cookie登录
        直接把cookie复制下来，然后手动放入请求头，案例v12
-       \
+       http模块包含一些关于cookie的模块，通过他们我们可以自动使用cookie
+        -cookiejar
+            管理存储cookie,向传出的http请求添加cookie
+            -fileCookiejar
+            mozillacokiejar
+            lwpcookiejar
+            自动使用cookie登录，大致流程是
+            打开登录页面后自动通过用户名密码登录
+            自动提取反馈回来的cookie
+            利用提取的cookie登录隐私页面
+  -ssl
+        -ssl证书就是指遵守ssl安全套路竭诚的服务器数字证书
+        -美国网景公司开发
+        -ca
+        -遇到不信任的ssl证书，需要单独处理，案例v17
+    
+            
+            
+            
+            
+            
     
     
         
