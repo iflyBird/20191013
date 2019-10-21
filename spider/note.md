@@ -54,6 +54,35 @@ urllib.error
         -美国网景公司开发
         -ca
         -遇到不信任的ssl证书，需要单独处理，案例v17
+        
+   -js加密
+    -有的反爬虫策略采用js对需要传输的数据进行加密处理(通常是去md5值)
+    -经过加密，传输的就是秘闻，但是
+    -加密函数或者过程一定是在浏览器完场，也就是一定会把代码暴露给使用者
+    -通过阅读加密算法，就可以模拟出加密过程，从而达到破解
+    -过程参考v0
+    -ajax
+      -异步请求
+      -一定会有url，请求方法可能有数据
+      -一般使用json格式
+      -案例,爬取豆瓣数据,案例v2
+   -requests
+    -requests-献给人类
+    -http for human,更简单更友好
+    -底层使用的是urllib3
+    -开源地址:https://github.com/requests/requests
+    -中文文档:https://docs.python-requests.org/zh_CN/latest/index.html
+    安装:conda install requests
+    -get请求
+        -requests.get(url)
+        -requests.request("get",url)
+        -可以带有headers和parmas参数
+        -案例v3
+    -get返回内容
+        -v4案例
+    
+    
+        
     
             
             
