@@ -80,6 +80,138 @@ urllib.error
         -案例v3
     -get返回内容
         -v4案例
+     -post案例
+     -proxy代理
+        proxies={
+        "http":"addresss of proxy"
+        "https":"address of proxy"
+        }
+        rsp=requests.request("get","http:xx",proxies=proxies)
+       
+        代理有可能报错，如果使用人数多，考虑安全问题，可能会被强关闭
+    -用户验证
+        -代理验证
+                #可能需要时yonghttp basic auth 可以这样
+                #格式为 用户名：密码@代理地址:端口地址
+                proxy={
+                "http":"china:123456@xxx"
+                }
+                rsp=requestts,get("http://www.baidu.com",proxies=proxy)
+        
+      -web客户端验证
+        -如果遇到web客户端验证，需要添加auth=（用户名.密码）
+             auth={"test1","123456"}#授权信息
+             rsp=requests.get("http://www.baidu.com",auth=auth)
+      -cookie
+        -requests可以自动处理cookie信息
+                rsp=requests.get("xxx")
+                #如果对方服务器传送过来cookie信息，泽科一通过反馈的cookie属性得到
+                 #返回一个cookiejar实例
+                 cookiejar=rsp.cookies
+                 #可以讲cookie转换为字典
+                 cookiedict=requests.utils.dict_from_cookiejar(cookiejar)
+         -session
+            -跟服务器端sesion不是一个·东西
+            -模拟一个会话,从客户端浏览器服务开始，到客户端浏览器断开
+            -让我们跨请求时保持某些参数，比如在同一个session实例发出的所有请求之间的cookie
+               #创建session对象，可以保持cookie值
+               ss=requests.session()
+               headers={"uesr-agent":"xxx"}
+               data={
+               "name":"xxx"
+               }
+               #此时，由于创建的session管理请求，负责发出请求
+               ss.post（"http://www.baidu.com",data=data,headers=headers）
+               rsp=ss.get("xxx"
+               )
+             -https请求验证ssl验证
+                -参数verify负责表示是否需要验证ssl证书，默认是true
+                -如果不需要ssl验证,则设置成false
+                -rsp=requests.get（"https://www.bai.com",veriff=false）
+ 
+ 
+ #页面解析和数据提取
+ -结构数据
+    -json文件
+    -json path
+    -转换成pyhton类型进行操作
+    -转转成python类型进行操作(json)
+    -xml文件
+        -转换成python类型
+        -xpath
+        -正则
+ -非结构化数据:先有数据,再谈结果
+    -文本
+    -电话号码
+    -邮箱地址
+    -html文件
+        -正则
+        -xpath
+        -css选择器
+        -
+#正则表达式
+    -一套规则，可以在字符串文本中进行搜索替换等
+    -案例v1,re的基本使用流程
+    -案例v2,match的基本使用
+        -match：从开始位置查找，一次匹配
+        -search：从任何位置查找，一次匹配
+        -findall:全部匹配
+        -finditer：全部匹配，返回迭代器
+           -split:分割字符串,返回列表
+           -sub替换
+#贪婪模式与非贪婪模式
+    -贪婪模式:在整个表达式匹配的前提下，尽可能多的匹配
+    -非贪婪模式:xxxxx,尽可能少的
+    -python里面数量词默认是贪婪模式
+        例如:
+            -查找文本abbbb
+            -re是 ab*
+            -贪婪模式:结果还是abbbb
+            -非贪婪模式:结果是a
+     #xml
+        -xml
+        -http
+        案例v4
+        概念:父节点。子节点，仙贝节点，兄弟节点，后代节点
+      #xpath
+      
+     #lxml
+     -python的html/xml的解析器
+    -官方文档
+        http://lxml.de/index.html
+     -功能：
+        -解析html,案例v29,py
+        -文件读取，案例v30.html,v31.py
+        -etreee和xpath的配合使用，案例v32.py
+   #css选择器 BeautifulSoup4 
+  现在是用beayutifulsoup
+  http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
+  几个常用的提取信息工具的比较:
+        正则:很快，不好用，不许安装
+        -beutifulsoup：慢，使用简单，安装简单
+        -lxml：比较快，使用简单，安装一般
+   -案例v33.py
+        
+    
+    
+   
+  
+  
+  
+   
+   
+   
+   
+   
+   
+     
+     
+           
+           
+    
+    
+               
+                
     
     
         

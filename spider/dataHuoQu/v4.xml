@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bookstore>
+<book category="cooking">
+    <title lang="en">
+        everyda
+    </title>
+    <author>gidada</author>
+    <year>2018</year>
+    <price>83</price>
+</book>
+    <book category="education">
+
+
+    <title lang="en">
+        everyda
+    </title>
+    <author>gidada</author>
+    <year>2018</year>
+    <price>83</price>
+</book>
+
+        <book category="sport">
+    <title lang="en">
+        everyda
+    </title>
+    <author>gidada</author>
+    <year>2018</year>
+    <price>83</price>
+</book>
+
+</bookstore>
