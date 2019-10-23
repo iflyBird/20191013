@@ -190,8 +190,49 @@ urllib.error
         正则:很快，不好用，不许安装
         -beutifulsoup：慢，使用简单，安装简单
         -lxml：比较快，使用简单，安装一般
-   -案例v33.py
+   -案例v32.py
+ -四大对象
+    -   Tag
+    -NavigabelString
+    -Beautifulsoup
+    -commment
+  -Tag
+    对应html中的标签
+    -对应通过soup。tag_name
+    -案例a33
+    
+  -beautifulsoup
+    -表示的是一个文档的内容,大部分可以当做是tag对象
+    -一般我们可以用soup来表示
+   
+   
+   -commment
+    -特殊类型的navagablestring对象
+    -对其输出,则内容不包括注释符号
+  -遍历文档对象
+    -contents:tag的子节点以列表的方式给出
+    -children：子节点以迭代器输出
+    -descendants：所有子孙节点
+    -string
+    -案例
+    
+  -css选择器
+    -使用soup.select，返回一个列表
+    -通过标签名称：soup.select("title")
+    -通过类名:soup.select(".content)
+    -通过id查找soup。select("#name_id)
+    -组合查找:soup.select(div #input_content)
+    -属性查找:soup.select(img[class='photo'])
+    -获取tag内容:tag.get_text（案例v6）
+    
+    
         
+    
+    
+  
+    
+    
+   
     
     
    
